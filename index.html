@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:,">
+<title>India's ministries as cells, 1947–2026</title>
+<style>
+  :root{--bg:#f3f4f6;--card:#fff;--line:#e5e7eb;--line2:#d1d5db;--ink:#333;--ink-strong:#111827;--muted:#4b5563;--muted2:#6b7280;
+    --blue:#2563eb;--blue-800:#1e40af;--blue-100:#dbeafe;--blue-50:#eff6ff}
+  *{box-sizing:border-box} html,body{margin:0}
+  body{background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji";font-size:16px;line-height:1.5}
+  /* the header, as on orgpedia.in */
+  .site-bar{position:fixed;top:0;left:0;right:0;z-index:50;background:#000;color:#f9fafb;padding:6px 16px;border-bottom:3px solid #3b82f6}
+  .site-in{display:flex;align-items:center;gap:14px;width:100%;max-width:1280px;margin:0 auto;height:40px}
+  .site-brand{display:flex;align-items:center;color:#f9fafb;text-decoration:none}
+  .site-op{width:34px;height:34px;border-radius:9999px;background:#fff;display:flex;align-items:center;justify-content:center;margin-right:8px;flex:none}
+  .site-op p{margin:0;font-size:19px;line-height:28px;color:#000} .site-op span{color:#3b82f6}
+  .site-word img{display:block;width:120px;height:auto}
+  .site-title{font-size:17px;font-weight:600;color:#f9fafb;border-left:1px solid #374151;padding-left:14px;white-space:nowrap}
+  @media (max-width:480px){.site-word{display:none}.site-title{border:0;padding-left:0}}
+  main{max-width:1280px;margin:0 auto;padding:62px 32px 24px}
+  .crumbs{display:flex;align-items:center;gap:8px;font-size:14px;line-height:20px;padding:8px 0;margin:0 0 16px}
+  .crumbs a{color:#000;font-weight:700;text-decoration:none} .crumbs a:hover{color:var(--blue)}
+  .crumbs svg{width:16px;height:16px;stroke:#9ca3af;fill:none} .crumbs .here{color:#4b5563}
+  h1{color:var(--ink-strong);font-size:20px;line-height:1.25;font-weight:700;margin:0;letter-spacing:-.01em}
+  .titlebar{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0 0 10px}
+  .lede{color:var(--muted);margin:0 0 14px;max-width:820px;font-size:15px}
+  .grid{display:grid;grid-template-columns:300px minmax(0,1fr);gap:14px;align-items:start}
+  .stagewrap{min-width:0}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px}
+  /* event list */
+  .list{height:calc(100vh - 160px);min-height:420px;display:flex;flex-direction:column}
+  .list h2{font-size:14px;margin:0;padding:12px 14px;border-bottom:1px solid var(--line);color:var(--ink-strong);display:flex;justify-content:space-between}
+  .list h2 span{color:var(--muted2);font-weight:400}
+  .items{overflow:auto;flex:1;padding:4px 0 10px;scroll-behavior:smooth}
+  .yr{position:sticky;top:0;background:#fff;font-size:12px;font-weight:700;color:var(--muted2);padding:8px 14px 3px;letter-spacing:.04em;z-index:1}
+  .search{display:flex;align-items:center;gap:4px;padding:8px 10px;border-bottom:1px solid var(--line)}
+  .search input{flex:1;min-width:0;font:inherit;font-size:13.5px;border:1px solid var(--line2);border-radius:7px;padding:5px 8px;outline:none}
+  .search input:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-100)}
+  .search .n{font-size:12px;color:var(--muted2);font-variant-numeric:tabular-nums;white-space:nowrap;min-width:38px;text-align:right}
+  .search button{border:1px solid var(--line2);background:#fff;border-radius:6px;width:26px;height:26px;padding:0;font-size:11px;color:var(--muted)}
+  .search button:disabled{opacity:.4;cursor:default}
+  .qinfo{font-size:12px;color:var(--muted);padding:6px 12px;border-bottom:1px solid var(--line);background:#f9fafb;display:none;line-height:1.4}
+  .qinfo b{color:var(--ink-strong);font-weight:600} .qinfo a{text-decoration:none} .qinfo a b{color:var(--blue)}
+  .kinds{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:10px}
+  .kinds .lbl{font-size:12.5px;color:var(--muted2);margin-right:2px}
+  .chip{font:inherit;font-size:12.5px;border:1px solid var(--line2);background:#fff;color:var(--muted2);border-radius:999px;padding:3px 10px;cursor:pointer;text-decoration:line-through}
+  .chip[aria-pressed="true"]{background:var(--blue-50);border-color:#bfdbfe;color:var(--blue-800);text-decoration:none}
+  .chip .c{font-variant-numeric:tabular-nums;opacity:.7;margin-left:4px}
+  .ev{display:block;width:100%;text-align:left;border:0;background:none;padding:6px 14px 6px 12px;border-left:3px solid transparent;cursor:pointer;font:inherit;font-size:13px;color:var(--ink);line-height:1.35}
+  .ev:hover{background:#f9fafb}
+  .ev.cur{background:var(--blue-50);border-left-color:var(--blue)}
+  .ev .k{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:1px 6px;border-radius:4px;background:#f3f4f6;color:var(--muted);margin-right:6px;vertical-align:1px}
+  .ev.sal .k{background:var(--blue-100);color:var(--blue-800)}
+  .ev .d{color:var(--muted2);font-size:11px;display:block}
+  .ev.person .k{background:#f1f5f9;color:#475569}
+  .am{display:block;padding:0 14px 7px 15px;margin-top:-3px;font-size:12px;color:var(--muted2)}
+  .am a{color:var(--blue);text-decoration:none} .am a:hover{text-decoration:underline}
+  .am a.doc{font-weight:600} .am a.doc::after{content:" ↗";font-weight:400}
+  /* stage */
+  .stagewrap{padding:12px}
+  .stage{position:relative;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#fff 0%,#f9fafb 60%,#f3f4f6 100%)}
+  .stage svg{display:block;width:100%;height:auto}
+  .yearbox{position:absolute;left:18px;top:8px;pointer-events:none}
+  .year{font-weight:800;font-size:58px;line-height:1;color:var(--ink-strong);opacity:.13;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+  .count{font-size:13px;color:var(--ink-strong);opacity:.45;margin-top:4px;font-variant-numeric:tabular-nums}
+  .office{position:absolute;z-index:2;right:10px;top:8px;display:flex;gap:6px;pointer-events:none;background:rgba(255,255,255,.82);border:1px solid rgba(229,231,235,.9);border-radius:10px;padding:7px 6px 5px;backdrop-filter:blur(2px)}
+  .p{width:92px;text-align:center;transition:opacity .5s}
+  .p .ph{width:46px;height:46px;border-radius:50%;margin:0 auto 3px;background:#e5e7eb;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.15);
+    display:flex;align-items:center;justify-content:center;font-weight:700;color:#475569;font-size:15px;overflow:hidden;filter:grayscale(1);background-color:#e5e7eb}
+  .p .t{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted2)}
+  .p .n{font-size:11.5px;color:var(--ink-strong);line-height:1.25}
+  .caption{position:absolute;left:50%;bottom:14px;transform:translate(-50%,10px);opacity:0;transition:opacity .4s,transform .4s;width:min(680px,calc(100% - 32px));
+    background:#fff;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:8px;box-shadow:0 10px 25px -10px rgba(17,24,39,.25);padding:9px 14px;pointer-events:none}
+  .caption.on{opacity:1;transform:translate(-50%,0)}
+  .caption .meta{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--muted2);margin-bottom:1px}
+  .kind{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:1px 7px;border-radius:5px;background:var(--blue-100);color:var(--blue-800)}
+  .caption .txt{font-size:15px;color:var(--ink-strong)}
+  .caption a{pointer-events:auto;color:var(--blue);text-decoration:none;margin-left:auto;font-size:12px;font-weight:600} .caption a:hover{text-decoration:underline}
+  .badges{position:absolute;inset:0;pointer-events:none}
+  .badge{position:absolute;transform:translate(-50%,-100%);background:rgba(17,24,39,.86);color:#fff;font-size:11.5px;padding:2px 8px;border-radius:999px;white-space:nowrap;transition:opacity .3s}
+  /* the Prime Ministers' terms */
+  .terms{display:flex;gap:6px;overflow-x:auto;margin:0 0 8px;padding:2px 2px 6px;scrollbar-width:thin}
+  .termsw{position:relative}
+  .tarr{position:absolute;top:0;bottom:6px;width:46px;display:none;align-items:center;border:0;font-size:22px;line-height:1;color:var(--blue-800);cursor:pointer;z-index:2;padding:0}
+  .tarr.on{display:flex} .tarr.l{left:0;justify-content:flex-start;padding-left:2px;background:linear-gradient(90deg,#fff 45%,rgba(255,255,255,0))}
+  .tarr.r{right:0;justify-content:flex-end;padding-right:2px;background:linear-gradient(270deg,#fff 45%,rgba(255,255,255,0))}
+  .tarr::after{content:"";position:absolute} .tarr:hover{color:var(--blue)}
+  .term{flex:none;display:flex;align-items:center;gap:7px;border:1px solid var(--line2);background:#fff;border-radius:999px;padding:3px 11px 3px 3px;font-size:12.5px;color:var(--ink);text-align:left;line-height:1.15}
+  .term:hover{border-color:#93c5fd}
+  .term[aria-pressed="true"]{background:var(--blue-50);border-color:var(--blue);color:var(--blue-800)}
+  .term.zero{opacity:.55}
+  .term.all{padding:3px 12px;font-weight:600}
+  .term .tp{width:26px;height:26px;border-radius:50%;background:#e5e7eb;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#475569;filter:grayscale(1);flex:none}
+  .term .tp.now{filter:none}
+  .term .tn{display:block;white-space:nowrap;font-weight:600}
+  .term .ty{display:block;white-space:nowrap;font-size:11px;color:var(--muted2)}
+  .band{position:absolute;left:0;right:0;top:36px;height:5px}
+  .band i{position:absolute;top:0;height:5px;cursor:pointer;border-right:1px solid #fff}
+  .band i:nth-child(odd){background:#cbd5e1} .band i:nth-child(even){background:#94a3b8}
+  .band i:hover{background:var(--blue)}
+  .busy{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:rgba(249,250,251,.75);font-size:14px;color:var(--muted);z-index:4}
+  .busy.on{display:flex}
+  .tip{position:absolute;pointer-events:none;background:#111827;color:#f9fafb;font-size:13px;padding:6px 9px;border-radius:6px;opacity:0;transition:opacity .12s;max-width:300px;line-height:1.35;z-index:3}
+  .tip small{color:#d1d5db}
+  /* controls */
+  .controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+  button{font:inherit;cursor:pointer}
+  .btn{background:var(--blue);color:#fff;border:1px solid var(--blue);border-radius:8px;padding:6px 14px;font-size:14px;font-weight:600;min-width:88px}
+  .btn:hover{background:var(--blue-800)}
+  .btn2{background:#fff;color:var(--ink);border:1px solid var(--line2);border-radius:8px;padding:6px 10px;font-size:14px}
+  .btn2[aria-pressed="true"]{border-color:var(--blue);color:var(--blue-800);background:var(--blue-50)}
+  .seg{display:inline-flex;border:1px solid var(--line2);border-radius:8px;overflow:hidden}
+  .seg button{border:0;background:#fff;padding:6px 12px;font-size:14px;color:var(--ink)}
+  .seg button[aria-pressed="true"]{background:var(--blue-50);color:var(--blue-800);font-weight:600}
+  .scrub{position:relative;flex:1;min-width:240px;height:42px}
+  .scrub input{position:absolute;inset:8px 0 auto 0;width:100%;margin:0;accent-color:var(--blue)}
+  .ticks{position:absolute;left:0;right:0;top:24px;height:10px;font-size:9.5px;color:var(--muted2)}
+  .ticks span{position:absolute;transform:translateX(-50%)}
+  .marks{position:absolute;left:0;right:0;top:2px;height:5px}
+  .marks i{position:absolute;width:2px;height:5px;background:#cbd5e1;transform:translateX(-50%)}
+  .marks i.s{background:var(--blue);height:6px}
+  .clock{font-size:12px;color:var(--muted2);font-variant-numeric:tabular-nums;min-width:86px;text-align:right}
+  select{font:inherit;font-size:14px;border:1px solid var(--line2);border-radius:8px;padding:5px 6px;background:#fff}
+  .legend{display:flex;flex-wrap:wrap;gap:4px 14px;margin:10px 2px 0;font-size:12.5px;color:var(--muted)}
+  .legend span{display:inline-flex;align-items:center;gap:6px} .legend i{width:10px;height:10px;border-radius:50%}
+  footer{font-size:12px;color:var(--muted2);margin-top:10px}
+  .follow{display:none;align-items:center;gap:8px;margin:0 0 8px;padding:6px 8px 6px 12px;background:var(--blue-50);border:1px solid #bfdbfe;border-radius:8px;font-size:13.5px;color:var(--blue-800)}
+  .follow.on{display:flex} .follow b{color:var(--ink-strong)} .follow a{color:var(--blue);text-decoration:none;font-size:12.5px} .follow a:hover{text-decoration:underline}
+  .follow button{margin-left:auto;border:1px solid #bfdbfe;background:#fff;border-radius:6px;padding:2px 9px;font-size:12.5px;color:var(--blue-800)}
+  .ccard{position:absolute;z-index:6;display:none;min-width:230px;max-width:300px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 28px -12px rgba(17,24,39,.35);padding:10px 12px}
+  .ccard.on{display:block} .ccard .nm{font-weight:700;color:var(--ink-strong);font-size:14.5px;line-height:1.3} .ccard .yr{font-size:12px;color:var(--muted2);margin:1px 0 8px}
+  .ccard button,.ccard a{display:block;width:100%;text-align:left;font:inherit;font-size:13.5px;border:0;background:none;padding:6px 8px;border-radius:6px;color:var(--ink);text-decoration:none;cursor:pointer}
+  .ccard button:hover,.ccard a:hover{background:var(--blue-50);color:var(--blue-800)} .ccard button.go{background:var(--blue);color:#fff;font-weight:600} .ccard button.go:hover{background:var(--blue-800);color:#fff}
+  .ccard .x{position:absolute;right:6px;top:4px;width:auto;padding:2px 6px;color:var(--muted2)}
+  .qinfo .fl{border:1px solid #bfdbfe;background:#fff;border-radius:5px;font-size:11px;padding:0 5px;margin-left:3px;color:var(--blue-800);cursor:pointer}
+  .am .hs{color:var(--muted2)} .am .hs a{color:var(--muted)}
+  .ministries{font-size:14px;margin-left:10px;font-weight:600;text-decoration:none;color:var(--blue);white-space:nowrap}
+  .ministries{font-size:13.5px;font-weight:600;text-decoration:none;color:var(--blue);white-space:nowrap}
+  .list h2{align-items:center}
+  .showbtn{font:inherit;font-size:12.5px;font-weight:500;border:1px solid var(--line2);background:#fff;border-radius:6px;padding:2px 8px;color:var(--muted)}
+  .list .kinds{display:none;flex-direction:column;align-items:stretch;gap:0;margin:0;padding:6px 12px 8px;border-bottom:1px solid var(--line);background:#f9fafb}
+  .list .kinds.on{display:flex} .list .kinds .lbl{font-size:12px;margin:0 0 4px}
+  .list .kinds .chip{display:flex;align-items:center;gap:8px;border:0;background:none;border-radius:4px;padding:3px 4px;text-decoration:none;color:var(--ink);font-size:13px;text-align:left}
+  .list .kinds .chip::before{content:"";width:14px;height:14px;border:1.5px solid var(--line2);border-radius:3px;background:#fff;flex:none}
+  .list .kinds .chip[aria-pressed="true"]{background:none;color:var(--ink)} .list .kinds .chip[aria-pressed="true"]::before{background:var(--blue);border-color:var(--blue);box-shadow:inset 0 0 0 2px #fff}
+  .list .kinds .chip .c{margin-left:auto}
+  .optw{position:relative} .optbtn{background:var(--blue-50);border-color:#bfdbfe;color:var(--blue-800);font-weight:600;white-space:nowrap}
+  .optbtn:hover{border-color:var(--blue);background:#dbeafe} .optbtn .car{font-size:11px} .opts{display:none;position:absolute;right:0;bottom:44px;z-index:8;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 28px -12px rgba(17,24,39,.35);padding:10px 12px;min-width:230px}
+  .opts.on{display:block} .opts .row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:4px 0;font-size:13px;color:var(--muted)}
+  .note{font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.6} .note b{color:var(--ink)}
+  .note a{color:var(--blue)} .note .legend{display:inline;margin:0} .note .legend span{display:inline-flex;margin-right:10px}
+  .note details{display:inline} .note summary{display:inline;cursor:pointer;color:var(--blue);margin-left:6px;font-weight:600}
+  .note details[open] ul{margin:6px 0 0;padding-left:18px;color:var(--muted)} .note details[open] li{margin:2px 0}
+  .site-foot{background:#000;color:#d1d5db;margin-top:18px;border-top:3px solid #3b82f6}
+  .site-foot .in{max-width:1280px;margin:0 auto;padding:12px 32px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;font-size:13px}
+  .site-foot img{width:96px;height:auto;display:block} .site-foot a{color:#d1d5db;text-decoration:none} .site-foot a:hover{color:#60a5fa}
+  .vhead,.vfoot,.vcard{display:none}
+  body.video{width:1080px;height:1350px;overflow:hidden;background:#fff}
+  body.video *{transition:none!important;animation:none!important}
+  body.video header,body.video .titlebar,body.video aside.list,body.video .termsw,body.video .follow,body.video .controls,body.video .note,body.video .site-foot,body.video .kinds,body.video .tip,body.video .ccard,body.video .busy{display:none!important}
+  body.video main{padding:0;max-width:none;width:1080px} body.video .grid{display:block} body.video .stagewrap{border:0;border-radius:0;padding:0;background:#fff}
+  body.video .stage{border:0;border-radius:0;width:1080px;height:1080px}
+  body.video .vhead{display:flex;flex-direction:column;justify-content:center;height:150px;padding:0 48px;background:#000;color:#fff;border-bottom:6px solid #3b82f6}
+  body.video .vhead .vt{font-size:40px;font-weight:700;letter-spacing:-.01em;line-height:1.15} body.video .vhead .vs{font-size:24px;color:#cbd5e1;margin-top:6px} body.video .vhead .vs b{color:#93c5fd}
+  body.video .vfoot{display:flex;flex-direction:column;justify-content:center;gap:4px;height:114px;padding:0 48px;font-size:22px;color:#4b5563;background:#f3f4f6;border-top:1px solid #e5e7eb}
+  body.video .vfoot b{color:#111827}
+  body.video .year{font-size:96px;opacity:.16} body.video .count{font-size:24px;opacity:.55} body.video .yearbox{left:30px;top:16px}
+  body.video .office{transform:scale(1.35);transform-origin:top right;right:16px;top:16px}
+  body.video .caption{width:980px;bottom:26px;padding:16px 22px;border-left-width:7px} body.video .caption .meta{font-size:20px} body.video .kind{font-size:17px;padding:2px 9px}
+  body.video .caption .txt{font-size:30px;line-height:1.3} body.video #clink{display:none!important}
+  body.video .badge{font-size:20px;padding:4px 12px}
+  body.video .vcard.on{display:flex;position:fixed;inset:0;z-index:100;flex-direction:column;align-items:center;justify-content:center;gap:22px;background:#000;color:#fff;text-align:center;padding:0 80px}
+  body.video .vcard .op{width:110px;height:110px;border-radius:50%;background:#fff;color:#000;font-size:62px;line-height:110px} body.video .vcard .op span{color:#3b82f6}
+  body.video .vcard .t1{font-size:60px;font-weight:700;line-height:1.12;letter-spacing:-.01em} body.video .vcard .t2{font-size:30px;color:#cbd5e1;line-height:1.4}
+  @media (max-width:640px){main{padding:60px 10px 20px}
+    .office{display:none!important}
+    .caption{padding:6px 10px} .caption .txt{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:13.5px}
+    .titlebar{flex-direction:column;gap:2px} .site-foot .in{padding:10px 14px}}
+  /* a ministry's own run, inside its page (U54): the stage and the controls only */
+  body.embed{background:#fff} body.embed header,body.embed .crumbs,body.embed h1,body.embed .lede,body.embed aside.list,body.embed .terms,
+  body.embed .kinds,body.embed .legend,body.embed footer,body.embed .titlebar,body.embed .termsw,body.embed .follow,body.embed .note{display:none!important}
+  body.embed main{padding:0;max-width:none} body.embed .grid{display:block} body.embed .stagewrap{border:0;padding:0}
+  body.embed .controls{margin-top:8px}
+  @media (max-width:900px){.grid{grid-template-columns:1fr}.list{order:2;height:420px;min-height:0}.p{width:70px}.p .ph{width:34px;height:34px;font-size:12px}.year{font-size:38px}}
+</style>
+</head>
+<body>
+<header><div class="site-bar"><div class="site-in">
+  <a href="https://www.orgpedia.in/" class="site-brand" title="orgpedia"><div class="site-op"><p><span>o</span>p</p></div>
+    <div class="site-word"><img src="l-en.svg" alt="Orgpedia"></div></a><span class="site-title">Evolution of Ministries</span>
+</div></div></header>
+<div class="vhead" id="vhead"><div class="vt">How India's ministries divided, fused and popped</div><div class="vs"><b>1947 → 2026</b> · every change to the Allocation of Business Rules</div></div>
+<main>
+  <div class="titlebar"><h1 id="title">How India's ministries divided, fused and popped, 1947–2026</h1><a class="ministries" href="ministry/">All ministries and their histories →</a></div>
+  <div class="grid">
+    <aside class="card list"><h2><span id="nev"></span><button class="showbtn" id="showbtn" aria-expanded="false">Show ▾</button></h2>
+      <div class="kinds" id="kinds"><span class="lbl">Show these changes:</span></div>
+      <div class="search"><input id="q" type="search" placeholder="Search ministries…" autocomplete="off" aria-label="Search ministries">
+        <span class="n" id="qn"></span><button id="qp" title="Previous match (Shift+Enter)" disabled>&#9650;</button><button id="qnx" title="Next match (Enter)" disabled>&#9660;</button></div>
+      <div class="qinfo" id="qinfo"></div>
+      <div class="items" id="items"></div></aside>
+    <section class="card stagewrap">
+      <div class="termsw"><button class="tarr l" id="tl" aria-label="Earlier Prime Ministers">‹</button><div class="terms" id="terms" role="group" aria-label="Prime Minister"></div><button class="tarr r" id="tr" aria-label="Later Prime Ministers">›</button></div>
+      <div class="follow" id="follow"><span>Following <b id="fname"></b></span><a id="fhist" target="_blank" rel="noopener">Its history ↗</a><button id="fstop" title="Back to every ministry">✕ Stop following</button></div>
+      <div class="stage" id="stage">
+        <svg id="svg" aria-label="Ministries drawn as cells"></svg>
+        <div class="yearbox"><div class="year" id="year"></div><div class="count" id="count"></div></div>
+        <div class="office" id="office"></div>
+        <div class="badges" id="badges"></div>
+        <div class="caption" id="cap"><div class="meta"><span class="kind" id="ckind"></span><span id="cdate"></span><a id="clink" target="_blank" rel="noopener"></a></div><div class="txt" id="ctxt"></div></div>
+        <div class="tip" id="tip"></div>
+        <div class="ccard" id="ccard" role="dialog" aria-label="This ministry"></div>
+        <div class="busy" id="busy">Preparing the run…</div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="play">&#9654; Play</button>
+        <div class="scrub"><div class="marks" id="marks"></div><input type="range" id="scrub" min="0" max="100" step="0.01" value="0"><div class="ticks" id="ticks"></div><div class="band" id="band"></div></div>
+        <span class="clock" id="clock"></span>
+        <div class="optw"><button class="btn2 optbtn" id="optbtn" aria-expanded="false" title="Change the view, the speed and the sound">&#9881; <span id="optlbl">Story</span> · <span id="spdlbl">1×</span> <span class="car">▾</span></button>
+          <div class="opts" id="opts">
+            <div class="row"><span>View</span><div class="seg" role="group" aria-label="View"><button id="vStory" aria-pressed="true" title="Slows down at the big changes">Story</button><button id="vFull" aria-pressed="false" title="Every change at a steady pace">Full run</button></div></div>
+            <div class="row"><span>Speed</span><select id="speed" aria-label="Speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></div>
+            <div class="row"><span>Sound</span><button class="btn2" id="snd" aria-pressed="false">&#128263; Off</button></div>
+          </div></div>
+      </div>
+      <div class="note"><b>Size of a cell = the number of subjects</b> the <a href="https://cabsec.gov.in/documents/rules-of-business" target="_blank" rel="noopener">Allocation of Business Rules</a> give it.
+        <details><summary>About the data</summary><ul>
+          <li><b>Subjects</b> are the numbered entries of the Second Schedule of the <a href="https://cabsec.gov.in/documents/rules-of-business" target="_blank" rel="noopener">Government of India (Allocation of Business) Rules, 1961</a>, counted after each of its 386 amendments.</li>
+          <li><b>Colour</b> is the ministry's sector: <span class="legend" id="legend"></span></li>
+          <li><b>Before 1961</b> the ministries come from the cabinet lists of 1947–1957; their sizes are worked back from 1961, so they are approximate.</li>
+          <li><b>Before 2004</b> the readings of the scanned gazettes still have known gaps.</li>
+          <li><b>Prime Ministers' terms:</b> a change belongs to the term in which it was notified.</li>
+          <li><b>In office:</b> pmindia.gov.in, presidentofindia.gov.in, cabsec.gov.in.</li>
+        </ul><span id="span" hidden></span></details></div>
+    </section>
+  </div>
+</main>
+<div class="vfoot" id="vfoot"><span><b>Size of a cell</b> = the number of subjects the Allocation of Business Rules give it</span><span>Source: cabsec.gov.in · <b>orgpedia.in</b></span></div>
+<div class="vcard" id="vcard"><div class="op"><span>o</span>p</div><div class="t1" id="vc1"></div><div class="t2" id="vc2"></div></div>
+<footer class="site-foot"><div class="in"><a href="https://www.orgpedia.in/"><img src="l-en.svg" alt="Orgpedia"></a>
+  <a href="https://www.orgpedia.in/disclaimer.html">Disclaimer</a><a href="https://github.com/orgpedia/site.cabsec-aob/issues">Report an error</a>
+  <a href="https://github.com/orgpedia/site.cabsec-aob">View on GitHub</a><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></footer>
+<script src="engine.js"></script>
+<script>
+"use strict";
+const {SECTORS, KIND_LABEL, Data, dateAt, Player, Renderer, Sound, fmtDate} = window.Cells;
+const VIDEO = new URLSearchParams(location.search).has("video");   // the 4:5 video's layout (§5): a taller stage
+const W = 1000, H = VIDEO ? 1000 : 600;
+if (VIDEO){ document.body.classList.add("video"); window.CELLS_MAXZOOM = 1.3; }
+const $ = id => document.getElementById(id);
+let data, player, renderer, sound = new Sound(), playing = false, speed = 1, lastNow = 0, curEv = -1;
+const KINDS = [["merged", "Merged"], ["absorbed", "Absorbed"], ["split", "Split"], ["spun_off", "Spun off"], ["born", "Created"],
+  ["ended", "Abolished"], ["moved", "Moved"], ["renamed", "Renamed"], ["size", "Size changes"], ["people", "In office"]];
+let hidden = new Set();
+try { hidden = new Set(JSON.parse(localStorage.getItem("cells.hidden") || "[]")); } catch (e){}
+const engineHidden = () => { const h = new Set([...hidden].filter(k => k !== "size" && k !== "people")); if (hidden.has("size")){ h.add("grew"); h.add("shrank"); } return h; };
+const search = {q: "", ids: new Set(), matches: [], i: -1};
+
+const RULES = "1961-01-14";   // the Allocation of Business Rules, 1961: subjects are counted from here
+const OFFICES = [["president", "President"], ["pm", "Prime Minister"], ["cabsec", "Cabinet Secretary"]];
+const initials = n => n.split(/[\s.]+/).filter(w => w && w[0] === w[0].toUpperCase()).map(w => w[0]).slice(0, 2).join("");
+
+function shortOf(uid, series){ return data.nameAt(uid, series).short.replace(/ and /g, " & "); }
+function badgeText(e){
+  const p = data.prevSeries(e.series), F = i => shortOf(e.from[i], p), T = i => shortOf(e.to[i], e.series);
+  return ({born: () => "+ " + T(0), ended: () => "− " + F(0), split: () => F(0) + " splits", merged: () => e.from.map((u, i) => F(i)).join(" + ") + " merge",
+    spun_off: () => "+ " + T(0), absorbed: () => F(0) + " → " + T(0), renamed: () => "→ " + T(0), moved: () => F(0) + " → " + T(0),
+    grew: () => T(0) + " ↑", shrank: () => T(0) + " ↓"}[e.kind] || (() => e.kind))();
+}
+function tAtDate(ms){ const ts = player.dir.times; for (let i = 1; i < ts.length; i++) if (ms <= ts[i][1]){ const [a, da] = ts[i - 1], [b, db] = ts[i]; return db > da ? a + (b - a) * (ms - da) / (db - da) : a; } return player.dir.T; }
+
+function buildList(){
+  const items = $("items"); items.innerHTML = "";
+  const q = search.ids.size > 0;
+  const rows = player.dir.events.filter(e => !e.quiet && (!q || [...e.from, ...e.to].some(u => search.ids.has(u))))
+    .map(e => ({t: rowT(e), y: +e.date.slice(0, 4), date: e.date, e}));
+  const d0 = data.frames[0].date, d1 = data.frames[data.frames.length - 1].date;
+  if (!hidden.has("people") && !q) for (const p of data.people) if (p.from > d0 && p.from <= d1) rows.push({t: tAtDate(Date.parse(p.from)), y: +p.from.slice(0, 4), date: p.from, person: p});
+  rows.sort((a, b) => a.date.localeCompare(b.date) || a.t - b.t || (a.person ? 1 : -1));   // the list reads by date
+  let y = null; const els = [];
+  for (const r of rows){
+    if (r.y !== y){ y = r.y; const h = document.createElement("div"); h.className = "yr"; h.textContent = y; items.appendChild(h); }
+    const b = document.createElement("button"); b.className = "ev"; b.dataset.t = r.t;
+    if (r.person){ b.classList.add("person"); const o = r.person.title || OFFICES.find(o => o[0] === r.person.office)[1];
+      b.innerHTML = `<span class="k">In office</span>${r.person.name} becomes ${o}<span class="d">${fmtDate(Date.parse(r.person.from))}</span>`; }
+    else { if (r.e.salient) b.classList.add("sal");
+      b.innerHTML = `<span class="k">${KIND_LABEL[r.e.kind]}</span>${r.e.salient && r.e.story ? r.e.story : r.e.caption}<span class="d">${fmtDate(Date.parse(r.date))}</span>`; }
+    b.onclick = () => { seek(r.t); };
+    items.appendChild(b); els.push(b);
+    if (r.e && r.e.series > 0 && !(r.e.flags || []).includes("approx")){   // the amendment behind it, and its changes (U41)
+      const am = document.createElement("div"); am.className = "am"; const n = r.e.series, re = (r.e.flags || []).includes("reissue");
+      const cs = re ? [] : (r.e.changes || []).slice(0, 8);
+      am.innerHTML = `<a class="doc" href="amend/${n}/" target="_blank" rel="noopener" title="The order, its pages and its changes">${re ? "Re-issue" : "Amendment"} #${n}</a>`
+        + (cs.length ? " · change " + cs.map(c => `<a href="amend/${n}/#c${c}" target="_blank" rel="noopener">${c}</a>`).join(", ") + ((r.e.changes || []).length > 8 ? ", …" : "") : "");
+      const hs = [...new Set([...r.e.from, ...r.e.to])].filter(x => full.units[x] && full.units[x].slug)
+        .map(x => `<a href="ministry/${full.units[x].slug}/" target="_blank" rel="noopener">${data.nameAt(x, r.e.series).short.replace(/ and /g, " & ")}</a>`);
+      if (hs.length) am.innerHTML += ` <span class="hs">· history: ${hs.join(", ")}</span>`;
+      items.appendChild(am);
+    }
+  }
+  const shown = player.dir.events.filter(e => !e.quiet).length;
+  $("nev").textContent = q ? `${rows.length} of ${shown} changes` : `${shown} changes`;
+  buildList.els = els; curEv = -1;
+}
+function rowT(e){ return e.t0 - (e.salient && !e.quiet && player.view === "story" ? 1.1 : 0.05); }
+function buildScrub(){
+  const T = player.dir.T; $("scrub").max = T;
+  const ticks = $("ticks"), marks = $("marks"); ticks.innerHTML = ""; marks.innerHTML = "";
+  const y0 = +data.frames[0].date.slice(0, 4), y1 = +data.frames[data.frames.length - 1].date.slice(0, 4);
+  let lastX = -1e9;   // year labels, skipping any that would crowd the one before (about 36 px apart)
+  const gap = 36 / Math.max(120, ticks.getBoundingClientRect().width || 400) * 100;
+  for (let y = y0; y <= y1; y++){ const x = tAtDate(Date.UTC(y, 0, 1)) / T * 100; if (x - lastX < gap) continue; lastX = x;
+    const s = document.createElement("span"); s.style.left = x + "%"; s.textContent = y; ticks.appendChild(s); }
+  const band = $("band"); band.innerHTML = "";
+  if (term === "all") for (const p of TERMS){ const a = tAtDate(Date.parse(p.from)), b = p.to ? tAtDate(Date.parse(p.to)) : T - 3;
+    if (b - a <= 0) continue; const i = document.createElement("i"); i.style.left = (a / T * 100) + "%"; i.style.width = ((b - a) / T * 100) + "%";
+    i.title = `${p.name}, ${p.years}`; i.onclick = () => selectTerm(p.slug, true); band.appendChild(i); }
+  for (const e of player.dir.events){ if (e.quiet) continue; const i = document.createElement("i"); if (e.salient && player.view === "story") i.className = "s"; i.style.left = (e.t0 / T * 100) + "%"; marks.appendChild(i); }
+}
+function setView(v){
+  const t = player ? dateAt(player.dir, player.st.t) : null;
+  if (!player) player = new Player(data, v, W, H, engineHidden()); else player.setView(v, engineHidden());
+  $("vStory").setAttribute("aria-pressed", v === "story"); $("vFull").setAttribute("aria-pressed", v === "full"); $("optlbl").textContent = v === "full" ? "Full run" : "Story";
+  computeSearch(); buildList(); buildScrub(); showSearch();
+  $("office").style.display = hidden.has("people") ? "none" : "";
+  seek(t ? tAtDate(t) : 0);
+}
+function seek(t){ player.seek(t); draw(); }
+
+let shownPeople = {};
+function overlays(){
+  const st = player.st, dir = player.dir, ms = dateAt(dir, st.t), d = new Date(ms);
+  $("year").textContent = d.getUTCFullYear();
+  let mins = 0, oth = 0; for (const c of Object.values(st.cells)) if (c.r > 2 || c.rt > 0){ if (c.kind === "ministry") mins++; else oth++; }
+  const approx = (data.frames[0].flags || []).includes("approx") && d.toISOString().slice(0, 10) < RULES;   // before the Rules: from the cabinet lists
+  $("count").textContent = `${mins} ministries · ${oth} departments & offices` + (approx ? " · sizes approximate" : "");
+  // in office
+  const iso = d.toISOString().slice(0, 10), off = $("office");
+  if (!off.children.length) for (const [k, t] of OFFICES){ const el = document.createElement("div"); el.className = "p"; el.id = "p-" + k; el.innerHTML = `<div class="ph"></div><div class="t">${t}</div><div class="n"></div>`; off.appendChild(el); }
+  for (const [k] of OFFICES){
+    const p = data.people.find(p => p.office === k && p.from <= iso && (!p.to || iso < p.to)) || data.people.filter(p => p.office === k && p.from <= iso).pop();
+    if (!p){ if (shownPeople[k]){ shownPeople[k] = null; const el = $("p-" + k);   // no one yet (no Cabinet Secretary before 1950)
+      el.querySelector(".ph").textContent = ""; el.querySelector(".ph").style.backgroundImage = ""; el.querySelector(".n").textContent = ""; } continue; }
+    if (shownPeople[k] === p.name) continue;
+    shownPeople[k] = p.name; const el = $("p-" + k); el.style.opacity = 0;
+    const title = p.title || OFFICES.find(o => o[0] === k)[1];
+    setTimeout(() => { const ph = el.querySelector(".ph"), ini = initials(p.name); ph.textContent = ini; ph.style.backgroundImage = "";
+      ph.style.filter = p.to ? "" : "none";   // in office today: in colour; those before: greyscale
+      if (p.image){ const img = new Image(); img.onload = () => { ph.textContent = ""; framePhoto(ph, img, p.crop); }; img.src = p.image; } el.querySelector(".n").textContent = p.name; el.querySelector(".t").textContent = title; el.style.opacity = 1; }, playing ? 250 : 0);
+  }
+  // caption (Story)
+  const sum = data.tl.summary && st.t >= dir.T - 3.0 ? data.tl.summary : null;   // a term's last seconds: what it changed
+  const cap = sum ? null : dir.captions.find(c => st.t >= c.t0 && st.t < c.t1);
+  if (sum){ if ($("cap").dataset.k !== "sum"){ $("cap").dataset.k = "sum"; $("ckind").textContent = "The term"; $("cdate").textContent = sum.when; $("ctxt").textContent = sum.text; $("clink").style.display = "none"; }
+    $("cap").classList.add("on"); }
+  else if (cap){ const k = cap.note ? "r" + cap.date : String(cap.e.i);
+    if ($("cap").dataset.k !== k){ $("cap").dataset.k = k;
+      $("ckind").textContent = cap.note ? cap.label : KIND_LABEL[cap.e.kind];
+      $("cdate").textContent = fmtDate(Date.parse(cap.note ? cap.date : cap.e.date));
+      $("ctxt").textContent = cap.note || cap.e.story || cap.e.caption;
+      const ser = cap.note ? (dir.beats.find(b => b.date === cap.date) || {}).series : cap.e.series, ok = ser > 0 && !(cap.e && (cap.e.flags || []).includes("approx"));
+      $("clink").style.display = ok ? "" : "none";
+      if (ok){ $("clink").href = `amend/${ser}/` + (cap.e && cap.e.changes && cap.e.changes.length ? `#c${cap.e.changes[0]}` : ""); $("clink").textContent = `Amendment #${ser} ↗`; } }
+    $("cap").classList.add("on"); } else { $("cap").classList.remove("on"); $("cap").dataset.k = ""; }
+  // badges for the quick events
+  const bd = $("badges"); bd.innerHTML = "";
+  const rect = $("stage").getBoundingClientRect(), k = rect.width / W;
+  let n = 0;
+  for (const e of dir.events){
+    if (n >= 5) break;
+    if (e.quiet || (dir.view === "story" && e.salient)) continue;
+    if (st.t < e.t0 || st.t > e.t0 + 2.4) continue;
+    const c = st.cells[e.to[0]] || st.cells[e.from[0]]; let x, y;
+    if (c){ [x, y] = renderer.toScreen(st, c.x, c.y - Math.max(c.r, 8) - 4); } else continue;
+    const b = document.createElement("div"); b.className = "badge"; b.textContent = badgeText(e);
+    const est = b.textContent.length * 6.6 + 18, cx = Math.max(est / 2 + 4, Math.min(rect.width - est / 2 - 4, x * k));
+    b.style.left = cx + "px"; b.style.top = Math.max(24, y * k) + "px"; b.style.opacity = st.t > e.t0 + 2.0 ? .0 : 1; bd.appendChild(b); n++;
+  }
+  // list, scrubber, clock
+  let cur = -1; const els = buildList.els || []; for (let i = 0; i < els.length; i++) if (+els[i].dataset.t <= st.t + 0.01) cur = i;
+  if (cur !== curEv){ if (curEv >= 0 && els[curEv]) els[curEv].classList.remove("cur"); if (cur >= 0){ els[cur].classList.add("cur"); const box = $("items"), r = els[cur].offsetTop - box.offsetTop;
+      if (r < box.scrollTop + 30 || r > box.scrollTop + box.clientHeight - 60) box.scrollTop = r - box.clientHeight / 3; } curEv = cur; }
+  $("scrub").value = st.t;
+  const f = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
+  $("clock").textContent = `${f(st.t)} / ${f(dir.T)}`;
+}
+function draw(){ renderer.draw(player.st); overlays(); }
+function rulesSeries(){ const st = player.st, s = st.bi < 0 ? data.frames[0].series : player.dir.beats[st.bi].series; return s >= 0 ? s : null; }
+
+// a photo in its circle: a square near the top of a portrait (where the face is), or the square people.json's crop names
+function framePhoto(ph, img, crop){
+  const w = img.naturalWidth, h = img.naturalHeight, D = ph.clientWidth || 46;
+  let side, cx, cy;
+  if (crop){ side = crop.size * Math.min(w, h); cx = crop.x * w; cy = crop.y * h; }
+  else { side = Math.min(w, h); cx = w / 2; cy = h > w ? (h - side) * 0.2 + side / 2 : h / 2; }
+  const k = D / side;
+  ph.style.backgroundImage = `url("${img.src}")`;
+  ph.style.backgroundSize = `${w * k}px ${h * k}px`;
+  ph.style.backgroundPosition = `${-(cx - side / 2) * k}px ${-(cy - side / 2) * k}px`;
+  ph.style.backgroundRepeat = "no-repeat";
+}
+
+// ---------- search: every unit whose names (any time) hold all the words; its shown changes, in time order ----------
+function yearOf(series){ return full.frames.find(f => f.series === series).date.slice(0, 4); }
+function unitStartT(uid){
+  const u = data.units[uid];
+  if (!data.bySeries.has(u.born) || u.born === data.frames[0].series) return player.dir.INTRO + 0.3;
+  const b = player.dir.beats.find(b => b.series === u.born); return b ? b.t + 0.3 : 0;
+}
+function computeSearch(){
+  const q = search.q.trim().toLowerCase();
+  search.ids = new Set(); search.matches = [];
+  if (q.length >= 2){
+    const toks = q.split(/\s+/);
+    for (const [uid, u] of Object.entries(data.units)){
+      const hay = u.names.map(n => n.name + " | " + n.short).join(" | ").toLowerCase().replace(/&/g, "and");
+      if (toks.every(t => hay.includes(t.replace(/&/g, "and"))) && data.frames.some(f => uid in f.sizes)) search.ids.add(uid);
+    }
+    for (const e of player.dir.events) if (!e.quiet && [...e.from, ...e.to].some(u => search.ids.has(u))) search.matches.push({t: rowT(e), e});
+    for (const uid of search.ids) if (!search.matches.some(m => m.e && [...m.e.from, ...m.e.to].includes(uid))) search.matches.push({t: unitStartT(uid), uid});
+    search.matches.sort((a, b) => a.t - b.t);
+  }
+  if (search.i >= search.matches.length) search.i = -1;
+  renderer.highlight = search.ids.size ? search.ids : (window._focus || null);
+}
+function showSearch(){
+  const n = search.matches.length, has = search.q.trim().length >= 2;
+  $("qn").textContent = !has ? "" : n ? `${search.i >= 0 ? search.i + 1 : "–"} of ${n}` : "0";
+  $("qp").disabled = $("qnx").disabled = !n;
+  const info = $("qinfo");
+  if (!has){ info.style.display = "none"; return; }
+  const us = [...search.ids].map(uid => { const u = data.units[uid], nm = u.names[u.names.length - 1].short;
+    const a = yearOf(u.born), b = u.ended ? yearOf(u.ended) : "", yrs = !u.ended ? "since " + a : a === b ? a : a + "–" + b;
+    return (u.slug ? `<a href="ministry/${u.slug}/" target="_blank" rel="noopener" title="Its history"><b>${nm}</b></a> (${yrs})` : `<b>${nm}</b> (${yrs})`)
+      + `<button class="fl" data-uid="${uid}" title="Follow it on the chart">Follow</button>`; });
+  info.innerHTML = us.length ? us.slice(0, 5).join(", ") + (us.length > 5 ? `, and ${us.length - 5} more` : "") : "No ministry has that name.";
+  info.style.display = "block";
+  info.querySelectorAll(".fl").forEach(b => b.onclick = () => { $("q").value = ""; search.q = ""; followUnit(b.dataset.uid); });
+}
+function onSearch(){ search.q = $("q").value; search.i = -1; computeSearch(); buildList(); showSearch(); draw(); }
+function stepSearch(d){
+  const n = search.matches.length; if (!n) return;
+  if (search.i < 0){ const t = player.st.t; const k = search.matches.findIndex(m => m.t > t + 0.05); search.i = d > 0 ? (k < 0 ? 0 : k) : ((k < 0 ? n : k) - 1 + n) % n; }
+  else search.i = (search.i + d + n) % n;
+  setPlaying(false); seek(search.matches[search.i].t + (search.matches[search.i].uid ? 0 : 0.6)); showSearch();
+}
+
+// ---------- the kinds shown ----------
+let rebuildTimer = null;
+function buildKinds(){
+  const box = $("kinds"); box.querySelectorAll(".chip").forEach(c => c.remove());
+  const count = k => k === "people" ? data.people.filter(p => p.from > data.frames[0].date).length
+    : data.events.filter(e => k === "size" ? (e.kind === "grew" || e.kind === "shrank") : e.kind === k).length;
+  for (const [k, label] of KINDS){
+    const n = count(k); if (!n) continue;
+    const b = document.createElement("button"); b.className = "chip"; b.setAttribute("aria-pressed", !hidden.has(k));
+    b.innerHTML = `${label}<span class="c">${n}</span>`;
+    b.onclick = () => { hidden.has(k) ? hidden.delete(k) : hidden.add(k); b.setAttribute("aria-pressed", !hidden.has(k));
+      try { localStorage.setItem("cells.hidden", JSON.stringify([...hidden])); } catch (e){}
+      clearTimeout(rebuildTimer); $("clock").textContent = "Updating…";
+      rebuildTimer = setTimeout(() => setView(player.view), 250); };
+    box.appendChild(b);
+  }
+}
+
+function frame(now){
+  const dt = Math.min(0.1, (now - lastNow) / 1000); lastNow = now;
+  if (playing){
+    const cues = player.advance(dt * speed);
+    for (const c of new Set(cues)) sound.play(c);
+    if (player.st.t >= player.dir.T - 1e-6) setPlaying(false);
+    draw();
+  }
+  requestAnimationFrame(frame);
+}
+function setPlaying(p){ playing = p; $("play").innerHTML = p ? "&#10074;&#10074; Pause" : "&#9654; Play"; if (p && player.st.t >= player.dir.T - 0.01) seek(0); }
+
+// ---------- the Prime Ministers' terms: the whole run, or one term cut out of it ----------
+let full = null, data0 = null, TERMS = [], term = "all";   // data0: the whole run as Data, for names
+const slugify = n => n.replace(/\(.*?\)/g, "").trim().toLowerCase().replace(/[^a-z]+/g, "-").replace(/^-|-$/g, "");
+const yr = d => d.slice(0, 4);
+function dayBefore(iso){ return new Date(Date.parse(iso) - 864e5).toISOString().slice(0, 10); }
+function makeTerms(tl){
+  const pms = tl.people.filter(p => p.office === "pm").sort((a, b) => a.from.localeCompare(b.from));
+  const seen = {}; for (const p of pms){ const s = slugify(p.name); seen[s] = (seen[s] || 0) + 1; }
+  return pms.map(p => { const s = slugify(p.name), to = p.to || "9999";
+    const n = tl.events.filter(e => e.date >= p.from && e.date < to).length;
+    const y0 = yr(p.from), y1 = p.to ? yr(p.to) : "";
+    return {...p, slug: seen[s] > 1 ? `${s}-${y0}` : s, n, short: p.name.replace("Vishwanath Pratap", "V. P.").replace(" (acting)", ", acting"),
+      years: p.to ? (y0 === y1 ? y0 : `${y0}–${y1}`) : `since ${y0}`}; });
+}
+function ministries(series, sizes){ let n = 0; for (const uid of Object.keys(sizes)) if (data0.nameAt(uid, series).kind === "ministry") n++; return n; }
+function sliceTerm(p){
+  const fr = full.frames, to = p.to || "9999";
+  let bi = 0; for (let i = 0; i < fr.length; i++) if (fr[i].date < p.from) bi = i;
+  const base = {...fr[bi], date: fr[bi].date < p.from ? p.from : fr[bi].date};   // the government on the day of swearing-in
+  const keep = fr.slice(bi + 1).filter(f => f.date >= p.from && f.date < to), ser = new Set(keep.map(f => f.series));
+  const events = full.events.filter(e => ser.has(e.series));
+  const people = full.people.filter(q => (q.to || "9999") > p.from && q.from < to);
+  const last = keep.length ? keep[keep.length - 1] : base;
+  const c = k => events.filter(e => e.kind === k).length;
+  const parts = [["born", "created"], ["ended", "abolished"], ["merged", "merged"], ["split", "split"], ["spun_off", "spun off"], ["absorbed", "absorbed"], ["renamed", "renamed"]]
+    .filter(([k]) => c(k)).map(([k, w]) => `${c(k)} ${w}`);
+  const m0 = ministries(base.series, base.sizes), m1 = ministries(last.series, last.sizes), who = p.name.replace(" (acting)", "");
+  const text = events.length ? `Under ${who}: ${m0} → ${m1} ministries` + (parts.length ? " · " + parts.join(", ") : "") + "."
+    : `Under ${who}, the ministries did not change.`;
+  return {...full, frames: [base, ...keep], events, people, endDate: p.to ? dayBefore(p.to) : null,
+    summary: {text, when: `${fmtDate(Date.parse(p.from))} – ${p.to ? fmtDate(Date.parse(dayBefore(p.to))) : "today"}`}};
+}
+const SPAN_ALL = "from the Rules of 14 January 1961 to series 386; before 1961, ministries from the cabinet lists of 1947, 1950, 1952 and 1957, with sizes worked back from 1961";
+function buildTerms(){
+  const box = $("terms"); box.innerHTML = "";
+  const all = document.createElement("button"); all.className = "term all"; all.dataset.slug = "all";
+  all.innerHTML = `<span><span class="tn">All</span><span class="ty">${yr(full.frames[0].date)}–${yr(full.frames[full.frames.length - 1].date)}</span></span>`;
+  all.onclick = () => selectTerm("all", true); box.appendChild(all);
+  for (const p of TERMS){
+    const b = document.createElement("button"); b.className = "term" + (p.n ? "" : " zero"); b.dataset.slug = p.slug;
+    b.title = `${p.name}, ${p.years}: ${p.n} change${p.n === 1 ? "" : "s"}`;
+    b.innerHTML = `<span class="tp${p.to ? "" : " now"}">${initials(p.name)}</span><span><span class="tn">${p.short}</span><span class="ty">${p.years} · ${p.n}</span></span>`;
+    b.onclick = () => selectTerm(p.slug, true); box.appendChild(b);
+    if (p.image){ const img = new Image(), ph = b.querySelector(".tp"); img.onload = () => { ph.textContent = ""; framePhoto(ph, img, p.crop); }; img.src = p.image; }
+  }
+}
+async function selectTerm(slug, play){
+  const p = TERMS.find(t => t.slug === slug); if (!p) slug = "all";
+  term = slug; setPlaying(false);
+  for (const b of $("terms").children){ const on = b.dataset.slug === slug; b.setAttribute("aria-pressed", on);
+    if (on) $("terms").scrollLeft = Math.max(0, b.offsetLeft - $("terms").offsetLeft - 40); }
+  $("title").textContent = p ? `How India's ministries changed under ${p.name.replace(" (acting)", " (acting PM)")}, ${p.years}`
+    : `How India's ministries divided, fused and popped, ${yr(full.frames[0].date)}–${yr(full.frames[full.frames.length - 1].date)}`;
+  $("span").textContent = p ? `in this term, ${p.n} change${p.n === 1 ? "" : "s"}; the whole run is ${SPAN_ALL}` : SPAN_ALL;
+  await rebuild(play, false);
+}
+// following a ministry (U54, U66): from just before it began to its end, within the run in hand (the whole run or a
+// term), its own changes played and the rest muted and hurried; it and its kin in colour, the rest grey
+let follow = null;
+function focusOn(tl, uid){
+  const u = full.units[uid]; if (!u) return tl;
+  const line = u.line || [uid], first = full.units[line[0]], inLine = new Set(line);   // its line, back to where it began (U67)
+  const fr = tl.frames;
+  let i0 = fr.findIndex(f => f.series >= first.born); i0 = i0 < 0 ? fr.length - 1 : Math.max(0, i0 - 1);
+  let i1 = u.ended != null ? fr.findIndex(f => f.series >= u.ended) : fr.length - 1; if (i1 < 0) i1 = fr.length - 1;
+  if (i1 < i0) i1 = i0;
+  const frames = fr.slice(i0, i1 + 1), ser = new Set(frames.slice(1).map(f => f.series));
+  const mine = e => e.from.some(x => inLine.has(x)) || e.to.some(x => inLine.has(x));
+  const big = new Set(["born", "ended", "split", "merged", "spun_off", "absorbed", "renamed"]);
+  const events = tl.events.filter(e => ser.has(e.series)).map(e => mine(e) ? {...e, salient: big.has(e.kind)} : {...e, mute: true, salient: false});
+  const kin = new Set(line); for (const e of events) if (!e.mute) for (const x of [...e.from, ...e.to]) kin.add(x);
+  const notes = {}; for (const [k, v] of Object.entries(tl.reissues || {})) if (events.some(e => !e.mute && String(e.series) === k)) notes[k] = v;   // a re-issue's caption only where it touched this ministry
+  const cut = i1 < fr.length - 1;
+  return {...tl, frames, events, center: line, kin: [...kin], reissues: notes, summary: cut ? null : tl.summary, endDate: cut ? null : tl.endDate,
+          people: tl.people.filter(p => (p.to || "9999") > frames[0].date && p.from <= frames[frames.length - 1].date)};
+}
+function sliceUnit(uid){ return focusOn(full, uid); }
+function baseTl(){ const p = TERMS.find(t => t.slug === term); return p ? sliceTerm(p) : full; }
+function setHash(){
+  const parts = []; if (term !== "all") parts.push("pm-" + term); if (follow) parts.push("follow=" + (full.units[follow].slug || follow));
+  try { history.replaceState(null, "", parts.length ? "#" + parts.join("&") : location.pathname + location.search); } catch (e){}
+}
+function showFollow(){
+  const el = $("follow"); el.classList.toggle("on", !!follow);
+  if (follow){ const u = full.units[follow], n = data.events.filter(e => !e.mute).length;
+    $("fname").textContent = u.names[u.names.length - 1].name + (n ? ` · ${n} change${n === 1 ? "" : "s"} here` : " · no change in this run");
+    $("fhist").href = `ministry/${u.slug}/`; }
+}
+// build the run for the term and the ministry followed; keep the date in view where it can
+async function rebuild(play, keepDate){
+  const when = keepDate && player ? dateAt(player.dir, player.st.t) : null;
+  setPlaying(false); $("busy").classList.add("on");
+  await new Promise(r => setTimeout(r, 30));
+  let tl = baseTl(); if (follow) tl = focusOn(tl, follow);
+  data = new Data(tl); player = null; shownPeople = {}; search.i = -1;
+  if (!renderer) renderer = new Renderer($("svg"), W, H);
+  renderer.keep = follow ? new Set(tl.kin) : null; window._focus = null;
+  setView(window._view || "story"); buildKinds(); showFollow(); setHash();
+  $("busy").classList.remove("on");
+  if (when != null && !follow){ const t = tAtDate(when); seek(Math.min(player.dir.T, Math.max(0, t))); }
+  if (play) setPlaying(true);
+}
+async function followUnit(uid, play = true){ follow = uid; closeCard(); await rebuild(play, false); }
+async function stopFollowing(){ follow = null; await rebuild(false, true); }
+
+// a click on a cell: what to do with this ministry (U66)
+function closeCard(){ $("ccard").classList.remove("on"); }
+function openCard(c, ev){
+  const u = full.units[c.id]; if (!u) return;
+  const ser = rulesSeries(), embed = document.body.classList.contains("embed"), cd = $("ccard");
+  const nm = data.nameAt(c.id, ser != null ? ser : data.frames[0].series).name;
+  const yrs = (() => { const a = yearOf(u.born), b = u.ended != null ? yearOf(u.ended) : ""; return u.ended == null ? "since " + a : a === b ? a : a + "–" + b; })();
+  cd.innerHTML = `<button class="x" aria-label="Close">✕</button><div class="nm">${nm}</div><div class="yr">${yrs} · ${c.size} subject${c.size === 1 ? "" : "s"} now</div>`
+    + (!embed && follow !== c.id ? `<button class="go" data-a="follow">Follow it here</button>` : "")
+    + (u.slug ? `<a href="${embed ? "" : ""}ministry/${u.slug}/" target="${embed ? "_top" : "_blank"}" rel="noopener">Its history ${embed ? "" : "↗"}</a>` : "")
+    + (ser != null ? `<a href="rules/${ser}/#${c.id}" target="_blank" rel="noopener">Its subjects in the Rules ↗</a>` : "");
+  const r = $("stage").getBoundingClientRect();
+  cd.style.left = Math.min(r.width - 310, Math.max(8, ev.clientX - r.left + 10)) + "px";
+  cd.style.top = Math.min(r.height - 170, Math.max(8, ev.clientY - r.top + 10)) + "px";
+  cd.classList.add("on"); $("tip").style.opacity = 0;
+  cd.querySelector(".x").onclick = closeCard;
+  const go = cd.querySelector('[data-a="follow"]'); if (go) go.onclick = () => followUnit(c.id);
+}
+async function loadAll(){
+  full = await (await fetch("timeline.json")).json();
+  full.scaleTotal = Math.max(...full.frames.map(f => Object.values(f.sizes).reduce((a, b) => a + b, 0)));   // one scale for every term
+  const unit = new URLSearchParams(location.search).get("unit");
+  if (unit && full.units[unit]){
+    document.body.classList.add("embed"); data0 = new Data(full);
+    data = new Data(sliceUnit(unit)); player = null; shownPeople = {}; window._focus = null;
+    if (!renderer) renderer = new Renderer($("svg"), W, H);
+    renderer.keep = new Set(data.tl.kin);   // only its kin in colour, the rest grey
+    setView("story"); buildKinds(); return;
+  }
+  data0 = new Data(full); TERMS = makeTerms(full); buildTerms();
+  const at = location.hash.match(/^#at=(\d{4}-\d{2}-\d{2})/);
+  const hp = location.hash.slice(1).split("&"), pm = hp.find(x => x.startsWith("pm-")), fo = hp.find(x => x.startsWith("follow="));
+  if (fo){ const sl = fo.slice(7); follow = Object.keys(full.units).find(k => full.units[k].slug === sl || k === sl) || null; }
+  await selectTerm(pm ? pm.slice(3) : "all", false);
+  if (at){ window._at = Date.parse(at[1]); }
+}
+async function boot(){
+  await loadAll();
+  $("q").addEventListener("input", onSearch);
+  $("q").addEventListener("keydown", e => { if (e.key === "Enter"){ e.preventDefault(); stepSearch(e.shiftKey ? -1 : 1); }
+    if (e.key === "Escape"){ $("q").value = ""; onSearch(); } });
+  $("qp").onclick = () => stepSearch(-1); $("qnx").onclick = () => stepSearch(1);
+  $("legend").innerHTML = Object.values(SECTORS).map(s => `<span><i style="background:${s.c}"></i>${s.label}</span>`).join("");
+  $("play").onclick = () => setPlaying(!playing);
+  $("scrub").oninput = e => seek(+e.target.value);
+  $("vStory").onclick = () => { window._view = "story"; setView("story"); }; $("vFull").onclick = () => { window._view = "full"; setView("full"); };
+  $("speed").onchange = e => { speed = +e.target.value; $("spdlbl").textContent = e.target.value + "×"; };
+  $("snd").onclick = () => { const on = sound.toggle(); $("snd").setAttribute("aria-pressed", on); $("snd").innerHTML = (on ? "&#128266; On" : "&#128263; Off"); };
+  const jump = dir => { const ts = (buildList.els || []).map(e => +e.dataset.t).sort((a, b) => a - b), t = player.st.t;
+    const n = dir > 0 ? ts.find(x => x > t + 0.05) : [...ts].reverse().find(x => x < t - 0.3); if (n != null) seek(n); };
+  // the previous and next change: the arrow keys (the buttons were dropped to give the scrubber room)
+  document.addEventListener("keydown", e => { if (e.target.tagName === "INPUT" && (e.target.type !== "range" || e.key !== " ")) return;
+    if (e.key === " "){ e.preventDefault(); setPlaying(!playing); } if (e.key === "ArrowRight") jump(1); if (e.key === "ArrowLeft") jump(-1); });
+  // hover
+  const svg = $("svg"), tip = $("tip");
+  svg.addEventListener("pointermove", ev => {
+    const pt = svg.createSVGPoint(); pt.x = ev.clientX; pt.y = ev.clientY;
+    const p = pt.matrixTransform(svg.querySelector("#cam").getScreenCTM().inverse());
+    let hit = null; for (const c of Object.values(player.st.cells)) if (Math.hypot(p.x - c.x, p.y - c.y) <= c.r + 3) hit = c;
+    if (!hit){ tip.style.opacity = 0; return; }
+    const u = data.units[hit.id], r = $("stage").getBoundingClientRect();
+    const hist = u.names.length > 1 ? "<br><small>" + u.names.map(n => n.name.replace(/^Ministry of /, "")).join(" → ") + "</small>" : "";
+    const ser = rulesSeries();
+    tip.innerHTML = `<b>${u.names.filter(n => n.short === hit.label).pop()?.name || u.names[u.names.length - 1].name}</b><br><small>${hit.size} subject${hit.size === 1 ? "" : "s"} · ${SECTORS[hit.sector].label}</small>${hist}`
+      + "<br><small>Click: follow it, its history, its subjects</small>";
+    svg.style.cursor = "pointer";
+    tip.style.left = Math.min(r.width - 310, ev.clientX - r.left + 14) + "px"; tip.style.top = (ev.clientY - r.top + 14) + "px"; tip.style.opacity = 1;
+  });
+  svg.addEventListener("pointerleave", () => tip.style.opacity = 0);
+  // a cell opens the Rules as they stood then, at its section of the Second Schedule, and pauses the run (U42)
+  svg.addEventListener("click", ev => {
+    const pt = svg.createSVGPoint(); pt.x = ev.clientX; pt.y = ev.clientY;
+    const p = pt.matrixTransform(svg.querySelector("#cam").getScreenCTM().inverse());
+    let hit = null; for (const c of Object.values(player.st.cells)) if (Math.hypot(p.x - c.x, p.y - c.y) <= c.r + 3) hit = c;
+    if (hit){ setPlaying(false); ev.stopPropagation(); openCard(hit, ev); } else closeCard();
+  });
+  $("fstop").onclick = () => stopFollowing();
+  // the Changes panel ends where the chart's card ends
+  const fitList = () => { const L = document.querySelector(".list"), C = document.querySelector(".stagewrap");
+    if (innerWidth <= 900){ L.style.height = ""; return; }
+    L.style.height = Math.max(420, C.getBoundingClientRect().bottom - L.getBoundingClientRect().top) + "px"; };
+  new ResizeObserver(fitList).observe(document.querySelector(".stagewrap")); addEventListener("resize", fitList); fitList();
+  // the Prime Ministers' row: arrows and a fade show there is more to scroll
+  const T = $("terms"), arrows = () => { $("tl").classList.toggle("on", T.scrollLeft > 4); $("tr").classList.toggle("on", T.scrollLeft + T.clientWidth < T.scrollWidth - 4); };
+  T.addEventListener("scroll", arrows); addEventListener("resize", arrows); setTimeout(arrows, 50);
+  $("tl").onclick = () => T.scrollBy({left: -T.clientWidth * 0.7, behavior: "smooth"}); $("tr").onclick = () => T.scrollBy({left: T.clientWidth * 0.7, behavior: "smooth"});
+  $("showbtn").onclick = e => { e.stopPropagation(); const on = $("kinds").classList.toggle("on"); $("showbtn").setAttribute("aria-expanded", on); };
+  $("optbtn").onclick = e => { e.stopPropagation(); const on = $("opts").classList.toggle("on"); $("optbtn").setAttribute("aria-expanded", on); };
+  document.addEventListener("click", e => { if (!$("opts").contains(e.target) && e.target !== $("optbtn")) $("opts").classList.remove("on"); });
+  document.addEventListener("click", e => { if (!$("ccard").contains(e.target) && e.target.closest("svg") !== svg) closeCard(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") closeCard(); });
+  window.renderAt = t => { seek(t); return player.st.t; };   // for the video renderer
+  window.videoCard = (a, b) => { $("vcard").classList.toggle("on", !!a); $("vc1").innerHTML = a || ""; $("vc2").innerHTML = b || ""; };
+  window.videoCaptions = () => player.dir.captions.map(c => ({t0: c.t0, t1: c.t1, text: c.note || (c.e && (c.e.story || c.e.caption)) || "", date: c.note ? c.date : c.e.date}));
+  window.cellsReady = true;
+  requestAnimationFrame(t => { lastNow = t; requestAnimationFrame(frame); });
+  if (VIDEO){ window.cellsReady = true; return; }   // the video renderer steps through it frame by frame
+  if (window._at){   // from an amendment page: play from just before that date's changes
+    const bt = player.dir.beats.find(b => Date.parse(b.date) >= window._at);
+    seek(Math.max(0, (bt ? bt.t : tAtDate(window._at)) - 1.2)); }
+  setPlaying(true);
+}
+boot();
+</script>
+</body>
+</html>
